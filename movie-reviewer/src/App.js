@@ -10,12 +10,13 @@ import { setMovieList } from './redux/movies/movies.actions'; // Action coming f
 class App extends React.Component {
 
   componentDidMount(){
-    const { setMovieList } = this.props;
     this.readMovieListFromAPI();
   }
 
   // Main Function for reading all movies from API
-  readMovieListFromAPI = async () => {
+  readMovieListFromAPI = async () => {    
+    const { setMovieList } = this.props;
+    
     const moviesAPI = 'https://us-central1-beacon-fe-worksample-api.cloudfunctions.net/app/movies';
     fetch(moviesAPI)
     .then(res => res.json())
