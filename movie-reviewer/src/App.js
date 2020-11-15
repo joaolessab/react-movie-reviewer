@@ -1,5 +1,4 @@
 import React from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
 
 import './App.css';
 
@@ -15,9 +14,7 @@ class App extends React.Component {
   render(){
     return (
       <div>
-        <Switch> {/* Switch matches only one and nothing more after it. Unique router */}
-          <Route exact path='/' component={HomePage} />
-        </Switch>
+        <HomePage/>
       </div>
     );
   }
