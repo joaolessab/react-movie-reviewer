@@ -7,14 +7,22 @@ import './movies-panel.styles.scss';
 
 // Functional component
 const MoviesPanel = ({ movies }) => (
-    <div>
+    <div className='movies-panel'>
+        <input type="text" placeholder='Filter the movie' />
+
+        <select>
+            { movies.map(movie => (
+                <option key={movie.id} value={movie.year}>{movie.year}</option>
+            ))}
+        </select>
+        
         { movies.map(movie => (
-            /* MovieItem: It could break into a component, but it didn't see what is it, right now */
+            
             <div key={movie.id}>
                 <p>
                     <span>{`${movie.score * 100}%`}</span>&nbsp;
                     <span onClick={()=> window.open(`${movie.url}`, "_blank")}>{`${movie.title}`}</span>&nbsp;
-                    <span>{`${movie.year}`}</span>
+                    <span>{`- (${movie.year})`}</span>
                 </p>
             </div>
         ))}
