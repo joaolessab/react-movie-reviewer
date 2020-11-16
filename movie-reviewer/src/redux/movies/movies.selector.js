@@ -2,7 +2,7 @@ import { createSelector } from 'reselect';
 
 const selectMovies = state => state.movies;
 
-export const selectCurrentUser = createSelector(
+export const selectMoviesItems = createSelector(
     [selectMovies],
-    movies => movies
+    movies => movies.movieItem
 );
